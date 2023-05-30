@@ -11,4 +11,8 @@ router.post("/notes", (req, res) => {
   res.send("Hello from the API route!");
 });
 
+router.delete("/notes/:id", (req, res) => {
+  res.send("Hello from the API route!");
+});
+
 module.exports = router;
