@@ -14,7 +14,7 @@ app.get("/notes", (req, res) => {
   res.sendFile(__dirname + "/public/notes.html");
 });
 
-app.get("/", (req, res) => {
+app.get("*", (req, res) => {
   // dirname is the directory of the current file.
   res.sendFile(__dirname + "/public/index.html");
 });
