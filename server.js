@@ -1,3 +1,4 @@
+const bodyParser = require("body-parser");
 const express = require("express");
 const api = require("./routes/api");
 
@@ -11,6 +12,8 @@ const PORT = process.env.PORT || 3000;
 // define middleware for serving static files
 // a static file is that does not need to be generated.
 app.use(express.static("public"));
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
 
 app.get("/notes", (req, res) => {
   console.log(JSON.stringify(req.query));
